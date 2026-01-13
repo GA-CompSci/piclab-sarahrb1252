@@ -25,13 +25,13 @@ public class PictureTester {
         //testKeepOnlyGreen();
         //testNegate();
         //testGrayscale();
-        testFixUnderwater();
+        //testFixUnderwater();
 
         // --------------
         // ACTIVITY 6
-        // testMirrorVertical();
+        //testMirrorVertical();
         // testMirrorVerticalRightToLeft();
-        // testMirrorHorizontal();
+         testMirrorHorizontal();
         // testMirrorHorizontalBotToTop();
         // testMirrorDiagonal();
 

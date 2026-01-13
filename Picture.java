@@ -181,10 +181,8 @@ public class Picture extends SimplePicture {
         Pixel[][] grid = this.getPixels2D();
          for (int row = 0; row < grid.length; row++){
             for (int col = 0; col < grid[0].length ; col++){
-                int ave = (grid[row][col].getGreen() + grid[row][col].getBlue() + grid[row][col].getRed()) /3;
-                int bluey = grid[row][col].getBlue()*50;
-                grid[row][col].setBlue(bluey);
-
+                int reds = grid[row][col].getRed()*5;
+                grid[row][col].setRed(reds);
             }
     }
     }
@@ -195,6 +193,15 @@ public class Picture extends SimplePicture {
      */
     public void mirrorVertical() {
         Pixel[][] picture = this.getPixels2D();
+        Pixel leftpix = null;
+        Pixel rightPix = null;
+         for (int row = 0; row < picture.length; row++){
+            for (int col = 0; col < picture[0].length / 2; col++){
+                 leftpix = picture[row][col];
+                 rightPix = picture[row][picture[0].length -1 -col];
+         leftpix.setColor(rightPix.getColor());
+           }
+        }
 
     }
 
@@ -204,6 +211,15 @@ public class Picture extends SimplePicture {
      */
     public void mirrorVerticalRightToLeft() {
         Pixel[][] pixels = this.getPixels2D();
+       Pixel leftpix = null;
+        Pixel rightPix = null;
+         for (int row = 0; row < pixels.length; row++){
+            for (int col = 0; col < pixels[0].length / 2; col++){
+                 leftpix = pixels[row][col];
+                 rightPix = pixels[row][pixels[0].length -1 -col];
+         leftpix.setColor(rightPix.getColor());
+           }
+        }
 
     }
 
@@ -213,7 +229,15 @@ public class Picture extends SimplePicture {
      */
     public void mirrorHorizontal() {
         Pixel[][] pixels = this.getPixels2D();
-
+        Pixel leftpix = null;
+        Pixel rightPix = null;
+         for (int row = 0; row < pixels.length/2; row++){
+            for (int col = 0; col < pixels[0].length ; col++){
+                leftpix = pixels[row][col];
+                rightPix = pixels[col][pixels.length -1 -row];
+                leftpix.setColor(rightPix.getColor());
+           }
+        }
     }
 
     /**
