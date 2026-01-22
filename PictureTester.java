@@ -31,9 +31,9 @@ public class PictureTester {
         // ACTIVITY 6
         //testMirrorVertical();
         // testMirrorVerticalRightToLeft();
-         testMirrorHorizontal();
-        // testMirrorHorizontalBotToTop();
-        // testMirrorDiagonal();
+        //testMirrorHorizontal();
+        //testMirrorHorizontalBotToTop();
+        testMirrorDiagonal();
 
         // ---------------
         // ACTIVITY 7
@@ -129,7 +129,6 @@ public class PictureTester {
         swan.explore();
     }
 
-    /** Method to test mirrorHorizontal */
     public static void testMirrorHorizontal() {
         Picture cycle = new Picture("redMotorcycle.jpg");
         cycle.mirrorHorizontal();
@@ -143,7 +142,7 @@ public class PictureTester {
         swan.explore();
     }
 
-    /** Method to test mirrorDiagonal */
+    /** Method to test mirrorDiagonal /** */
     public static void testMirrorDiagonal() {
         Picture beach = new Picture("beach.jpg");
         beach.mirrorDiagonal();
