@@ -264,15 +264,15 @@ public class Picture extends SimplePicture {
      * Mirror around a mirror positioned on the diagonal line from bottom left to
      * top right/** */
     public void mirrorDiagonal() {
-        Pixel[][] pixels = this.getPixels2D();
-        Pixel bottomLeft = null;
-        Pixel topRight = null;
-        for (int row  = 0; row < pixels.length; row++){
-            for (int col = 0; col <= pixels[0].length; col ++){
-                bottomLeft.setColor(pixels[row.getColor()][col.getColor]);
-                topRight.setColor(pixels[col.getColor()][row.getColor()]);
-            }
-            }
+        //Pixel[][] pixels = this.getPixels2D();
+      //  Pixel bottomLeft = null;
+      // Pixel topRight = null;
+       // for (int row  = 0; row < pixels.length/2; row++){
+        //    for (int col = 0; col <= pixels[0].length/2; col ++){
+          //      bottomLeft.setColor(pixels[row.getColor()][col.getColor]);
+           //     topRight.setColor(pixels[col.getColor()][row.getColor()]);
+           // }
+            //}
 
         }
 
@@ -280,14 +280,40 @@ public class Picture extends SimplePicture {
     /** Mirror just part of a picture of a temple */
     public void mirrorTemple() {
         Pixel[][] pixels = this.getPixels2D();
-
+        Pixel leftpix = null;
+        Pixel rightPix = null;
+        for (int row = 0; row < pixels.length-200; row++){
+            for (int col = 0; col < pixels[0].length - 400; col++){
+                leftpix = pixels[row][col];
+                rightPix = pixels[row][pixels[0].length -1 -col];
+                leftpix.setColor(rightPix.getColor());
+           }
+        }
     }
 
     /** Mirror just part of a picture of a snowman */
     public void mirrorArms() {
-
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel topPix = null;
+        Pixel botPix = null;
+        for (int row = 0; row < 200 ; row++){
+            for (int col = 0; col < 200; col++){
+                //while (row > 50 && col > 50){
+                topPix = pixels[row][col];
+                botPix = pixels[pixels.length - 1 - row][col];
+                topPix.setColor(botPix.getColor());
+                //}
+                
+            }
+        }
+        // for (int row = 0; row > pixels.length - 143 && row < pixels.length - 194; row++){
+          //  for (int col = 0; col < pixels[0].length -225 && col > pixels[0].length -203  ; col++){
+                
+        
+    
     }
-
+    //156 -105
+    // 196-174
     /** Mirror just the gull */
     public void mirrorGull() {
 
