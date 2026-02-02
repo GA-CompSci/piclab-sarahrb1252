@@ -294,29 +294,45 @@ public class Picture extends SimplePicture {
     /** Mirror just part of a picture of a snowman */
     public void mirrorArms() {
         Pixel[][] pixels = this.getPixels2D();
-        Pixel topPix = null;
-        Pixel botPix = null;
-        for (int row = 0; row < 200 ; row++){
-            for (int col = 0; col < 200; col++){
+        Pixel topPix1 = null;
+        Pixel botPix1 = null;
+        Pixel topPix2 = null;
+        Pixel botPix2 = null;
+        for (int row = 0; row < 75; row++){
+            for (int col = 0; col < pixels[0].length/4 - 20 ; col++){
                 //while (row > 50 && col > 50){
-                topPix = pixels[row][col];
-                botPix = pixels[pixels.length - 1 - row][col];
-                topPix.setColor(botPix.getColor());
+                topPix1 = pixels[row +125 ][col +100];
+                botPix1 = pixels[pixels.length - 1 - (row +100)][col+100];
+                topPix1.setColor(botPix1.getColor());
                 //}
                 
             }
         }
-        // for (int row = 0; row > pixels.length - 143 && row < pixels.length - 194; row++){
-          //  for (int col = 0; col < pixels[0].length -225 && col > pixels[0].length -203  ; col++){
+        for (int row = 0; row <25; row++){
+            for (int col = 0; col <pixels[0].length/4 - 60 ; col++){
+                topPix2 = pixels[row +125][col +230];
+                botPix2 = pixels[pixels.length - 1 - (row +100)][col +250];
+                topPix2.setColor(botPix2.getColor());
                 
+                
+            }
+        }                
         
     
     }
-    //156 -105
-    // 196-174
     /** Mirror just the gull */
     public void mirrorGull() {
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel topPix1 = null;
+        Pixel botPix1 = null;
+        for (int row = 0; row < 10; row++){
+            for (int col = 0; col < pixels[0].length/15 ; col++){
+                topPix1 = pixels[row+240][col+265];
+                botPix1 = pixels[pixels.length-1 -(row+240)][pixels[0].length -1 -(col+400)];
+                topPix1.setColor(botPix1.getColor());
 
+    }
+}
     }
 
     /**
